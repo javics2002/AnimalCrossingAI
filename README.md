@@ -224,6 +224,8 @@ Las tareas BTT_FindClosestLocation y BTT_FindClosestTaste son también variacion
 
 ## Resultados
 
+[Vídeo con los resutados](https://youtu.be/JhROpjdRV7c)
+
 Los resultados en general son satisfactorios, el comportamiento es el esperado. Los vecinos sacian sus necesidades correctamente y ejecutan su rutina sin problema. El balanceo no es realista, pero lo he ajustado a lo que necesito para probar todas las características.
 
 He encontrado algunos “bloqueos”. Cuando llueve y quieres ir a un objetivo exterior, como estás poniendo el target al exterior, y la lluvia es lo que mayor prioridad tiene, se pisa constantemente en todos los frames. El resultado es bueno, el aldeano espera en el interior, simplemente peta la consola de mensajes porque oscila muy rápido. Otro es que haga calor y llueva a la vez, de nuevo se pisa constantemente y el aldeano ha decidido quedarse en la playa. Podemos comprarlo como correcto, si el pobre tiene calor. El último ha sido uno que no esperaba. He visto que la tarea BTT_FindBestMapPoint puede fallar, y he encontrado que en esa ocasión todos los vecinos tenían sed. Como marco los puntos como ocupados desde que el aldeano decide dirigirse a ellos, los puntos se ocupan por bastante rato, lo que tarden en llegar. Es decir, es posible que todos los puntos de sed se encuentren ocupados a la vez. El resultado es que el aldeano que se bloquea se queda quieto intentando encontrar una bebida cada frame porque es lo que quiere.
